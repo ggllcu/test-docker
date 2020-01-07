@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  php:
+    image: php:7.4.1-fpm
+#    build:
+#      context: ./docker/php
+#      dockerfile: ./Dockerfile
+#    restart: on-failure
+    volumes:
+      - ./apps/backend:/usr/src/app
+    working_dir: /usr/src/app
+    command: ls -l
+#    user: ${LOCAL_USER}
